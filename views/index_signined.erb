@@ -1,0 +1,85 @@
+<% content_for :head do %>
+<link rel="stylesheet" href="css/style.css">
+
+<% end %>
+
+<% content_for :body do %>
+
+<div class="menubar">
+    <div class="logo" style="width: 80px;"></div>
+    <div class="loginname"><h2><%= User.find(session[:user]).name %>としてログイン</h2></div>
+    <div class="logout"><a href="/signout"><i class="fas fa-sign-out-alt"></i></a></div>
+</div>
+
+<img class="sdgs_img" src="img/SDGs.jpeg" alt="SDGsの画像" style="filter: saturate(<%=255* @check/ 20 %>%)">
+
+<h3 class="tassei">達成率：<%= (100*@check/20) %>%</h3>
+
+
+<div class="body">
+
+<% @user_tasks.each do |user_task|%>
+
+        <div class="card">
+            <%= Task.find(user_task.task_id).name %>: 
+            <% if user_task.check == true  %>
+             <input class="sdg<%= user_task.id %>" type ="checkbox" value="<%= user_task.id %>" onChange="check(this.value, true, '.sdg<%= user_task.id %>' )" checked>
+            <% else %>
+            <input class="sdg<%= user_task.id %>" type ="checkbox" value="<%= user_task.id %>" onChange="check(this.value, false, '.sdg<%= user_task.id %>')">
+            <% end %> <br>
+            <img class="gohan_img" src="<%= Task.find(user_task.task_id).image %>" alt="食べ物を残さない写真">
+        </div>
+    <% end %>
+</div>
+
+
+<div class="content">
+        
+    </div>
+    <div class="modal js-modal">
+        <div class="modal__bg js-modal-close"></div>
+        <div class="modal__content">
+            <p>すべての項目を達成しました。おめでとうございます！これからもSDGsを意識してより良い地球にしましょう。
+            アプリをご利用いただきありがとうございました。</p>
+            <a class="js-modal-close" href="">閉じる</a>
+        </div><!--modal__inner-->
+    </div><!--modal-->
+
+
+<script>
+    var current_check = <%= (100*@check/20) %>;
+    function check(value, status, className){
+        if (status  == true){
+            current_check = current_check - 1 * 100 / 20;
+            $('.sdgs_img').css('filter', 'saturate(' + current_check + '%)');
+            $(className).attr('onChange', "check(this.value, false, '" + className + "')");
+        } else {
+             current_check = current_check + 1 * 100 / 20;
+            $('.sdgs_img').css('filter', 'saturate(' + current_check + '%)');
+            $(className).attr('onChange', "check(this.value, true, '" + className + "')");
+        }
+        $('.tassei').html('達成率 : ' + current_check + '%');
+        $.post("/check/" + value);
+        
+        if (current_check == 100){
+            $('.js-modal').fadeIn();
+        }
+        
+    }
+    
+    
+    
+    $(function(){
+    $('.js-modal-close').on('click',function(){
+        $('.js-modal').fadeOut();
+        return false;
+    });
+});
+
+</script>
+
+
+
+
+<% end %>
+    

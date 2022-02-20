@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.body {
+    font-family: -apple-system, "Roboto", "Helvetica Neue", "Droid Sans",
+    "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "Meiryo", "メイリオ",
+    "Osaka", "MS PGothic", arial, sans-serif;
+   display: flex;
+   align-content: space-around;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+}
+
+.card {
+    margin: 8px;
+    font-family: -apple-system, "Roboto", "Helvetica Neue", "Droid Sans",
+    "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "Meiryo", "メイリオ",
+    "Osaka", "MS PGothic", arial, sans-serif;
+    width: 256px;
+    height: 256px;
+}
+
+.card img {
+    width: 80%;
+    
+}
+
+
+
+.sdgs_img {
+    filter: saturate(0%);
+    width: 700px;
+    height: 500px;
+    
+    
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%) ;
+    -webkit-transform:  translateX(-50%);
+     margin: auto;
+    
+    
+}
+
+.menubar {
+    font-family: -apple-system, "Roboto", "Helvetica Neue", "Droid Sans",
+    "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "Meiryo", "メイリオ",
+    "Osaka", "MS PGothic", arial, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.tassei {
+    font-family: -apple-system, "Roboto", "Helvetica Neue", "Droid Sans",
+    "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "Meiryo", "メイリオ",
+    "Osaka", "MS PGothic", arial, sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+
+.fa-sign-out-alt {
+    color: coral;
+    font-size: 50px;
+}
+
+
+/*.logout a {*/
+    
+     /*周囲の線の起点とするためrelativeを指定*/
+/*	position: relative;*/
+    /*円の形状*/
+/*	width:80px;*/
+/*	height:80px;*/
+/*    box-sizing: border-box;*/
+/*    padding: 0 10px;*/
+/*	text-align: center;*/
+/*	background: #ff7f50;*/
+/*	border-radius:50%;*/
+/*	color: #fff;*/
+/*    text-decoration: none;*/
+    /*outline: none;*/
+    /*天地中央にテキストを配置*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+    
+    
+    
+/*}*/
+
+/*内側の線*/
+/*.logout a:after {*/
+/*	content: "";*/
+    /*絶対配置で線の位置を決める*/
+/*	position: absolute;*/
+/*	top: 50%;*/
+/*	left: 50%;*/
+    /*線の形状*/
+/*    width: 85%;*/
+/*	height: 85%;*/
+/*	border: 2px solid lightskyblue;*/
+/*	border-radius: 50%;*/
+/*	transform: translate(-50%, -50%) scale(1.1);*/
+    /*アニメーションの指定*/
+/*    transition: .3s ease; */
+/*	}*/
+
+/*hoverをしたら枠線が小さくなる*/
+/*.logout a:hover:after {*/
+/*	transform: translate(-50%, -50%) scale(1);*/
+/*    border-color: lightskyblue;*/
+    
+    
+/*}*/
+
+.modal{
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.modal__bg{
+    background: rgba(0,0,0,0.8);
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+}
+.modal__content{
+    background: #fff;
+    left: 50%;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 60%;
+}
+.js-modal-close{
+    text-decoration: none;
+    
+}
+
+
+@media screen and (max-width: 768px) {
+  .sdgs_img {
+    width: 100%;
+    height: auto;
+  }
+}

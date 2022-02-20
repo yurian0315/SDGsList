@@ -1,0 +1,35 @@
+<% content_for :head do %>
+<link rel="stylesheet" href="css/signin.css">
+
+<% end %>
+
+<% content_for :body do %>
+
+<div class="form-wrapper">
+  <h1>Sign In</h1>
+  <form action="/signin" method="post">
+    <div class="form-item">
+      <label for="name"></label>
+      <input type="text" name="name" required="required" placeholder="Name"></input>
+    </div>
+    <div class="form-item">
+      <label for="password"></label>
+      <input type="password" name="password" required="required" placeholder="Password"></input>
+    </div>
+    <div class="button-panel">
+      <input type="submit" class="button" title="Sign In" value="Sign In"></input>
+    </div>
+  </form>
+  <div class="form-footer">
+    <p><a href="/signup">Create an account</a></p>
+  </div>
+</div>
+
+
+<!--<form action="/signin" method="post">-->
+<!--    <input type="text" name="name" placeholder="ユーザー名"><br>-->
+<!--    <input type="password" name="password" placeholder="パスワード"><br>-->
+<!--    <input type="submit" value="ログイン">-->
+<!--</form>-->
+
+<% end %>

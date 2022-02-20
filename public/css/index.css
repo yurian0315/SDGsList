@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.lognew {
+     display: flex;
+    justify-content: flex-end;
+
+}
+.lognew a {
+    text-decoration: none;
+   
+}
+
+.fa-sign-in-alt {
+    color: coral;
+    font-size: 50px;
+   
+}
+
+.fa-user-plus {
+    color: skyblue;
+    font-size: 40px;
+    padding-left: 8px;
+}
+
+h3 {
+    text-align: center;
+}
+
+.start {
+    text-align: center;
+}
+
+.sdgs_start {
+    width: 700px;
+    height: 500px;
+    margin: 0 auto;
+    /*filter: opacity(40%);*/
+    /*transition: 0.4s ease;*/
+}
+
+/*.sdgs_start:hover {*/
+/*    filter: none;*/
+/*}*/
+
+.loginpage {
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .sdgs_start {
+    width: 100%;
+    height: auto;
+  }
+}
