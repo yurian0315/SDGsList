@@ -21,12 +21,12 @@
 <% @user_tasks.each do |user_task|%>
 
         <div class="card">
-            <%= Task.find(user_task.task_id).name %>: 
+            <div class="title"><%= Task.find(user_task.task_id).name %>:
             <% if user_task.check == true  %>
              <input class="sdg<%= user_task.id %>" type ="checkbox" value="<%= user_task.id %>" onChange="check(this.value, true, '.sdg<%= user_task.id %>' )" checked>
             <% else %>
             <input class="sdg<%= user_task.id %>" type ="checkbox" value="<%= user_task.id %>" onChange="check(this.value, false, '.sdg<%= user_task.id %>')">
-            <% end %> <br>
+            <% end %> <br></div>
             <img class="gohan_img" src="<%= Task.find(user_task.task_id).image %>" alt="食べ物を残さない写真">
         </div>
     <% end %>

@@ -4,7 +4,8 @@ class User < ActiveRecord::Base
     has_secure_password
     
     validates :name,
-     uniqueness: true
+     uniqueness: true,
+     presence: true
     
 end
 
@@ -15,3 +16,4 @@ end
 class UserTask <  ActiveRecord::Base
     
 end
+
