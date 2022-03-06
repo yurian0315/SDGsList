@@ -1,18 +1,37 @@
 <% content_for :head do %>
 <link rel="stylesheet" href="css/index.css">
+<link rel="shortcut icon" href="/favicon.ico">
+
+<meta name="description" content="今すぐSDGsに協力できるワンアクションをチェックリストとして確認できるアプリです。">
+<meta property="og:image" content="https://sdgslist.herokuapp.com/img/start.jpeg">
+
 
 <% end %>
 
 <% content_for :body do %>
 
-<div class="lognew"><a href="/signin"><i class="fas fa-sign-in-alt"></i></a><a href="/signup"><i class="fas fa-user-plus"></i></a></div>
+
+<div class="menu-wrap">
+  <div class="menu-left">
+    <a href="/" alt="">SDGsList</a>
+  </div>
+  <div class="menu-right">
+    <a href="/signin"><i class="fas fa-sign-in-alt"></i></a>
+    <a href="/signup"><i class="fas fa-user-plus"></i></a>
+    
+  </div>
+</div>
+
+
 
 <div class="loginpage">
-<p class="start">[SDGsとは]<br>Sustainable Development Goalsの頭文字の略で、日本語では持続可能な開発目標と言われています。
-2015年9月に国連が提唱し、持続可能な社会の実現を目指す2030年までの目標です。SDGsは17の大きな目標と169の具体的なターゲットで構成されています。
-<br><br>[このアプリについて]<br>このアプリは個人で今すぐSDGsに協力できるワンアクションをチェックリストとして確認できるアプリです。
-<br>目標が達成されていくにつれて絵の色が変わります。</p>
+
 
 <img class="sdgs_start" src="img/start.jpeg">
+
+<p class="start"><h1 class="midasi">SDGsとは</h1><br>Sustainable Development Goalsの頭文字の略で、日本語では持続可能な開発目標と言われています。
+2015年9月に国連が提唱し、持続可能な社会の実現を目指す2030年までの目標です。SDGsは17の大きな目標と169の具体的なターゲットで構成されています。
+<br><br><h1 class="midasi">このアプリについて</h1><br>このアプリは個人で今すぐSDGsに協力できるワンアクションをチェックリストとして確認できるアプリです。
+<br>目標が達成されていくにつれて絵の色が変わります。</p>
 </div>
 <% end %>

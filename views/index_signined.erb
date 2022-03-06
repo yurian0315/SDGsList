@@ -1,17 +1,17 @@
 <% content_for :head do %>
 <link rel="stylesheet" href="css/style.css">
+<link rel="shortcut icon" href="/favicon.ico">
 
 <% end %>
 
 <% content_for :body do %>
 
 <div class="menubar">
-    <div class="logo" style="width: 80px;"></div>
-    <div class="loginname"><h2><%= User.find(session[:user]).name %>としてログイン</h2></div>
+    <div class="loginname"><h2>ようこそ<%= User.find(session[:user]).name %>さん</h2></div>
     <div class="logout"><a href="/signout"><i class="fas fa-sign-out-alt"></i></a></div>
 </div>
 
-<img class="sdgs_img" src="img/SDGs.jpeg" alt="SDGsの画像" style="filter: saturate(<%=255* @check/ 20 %>%)">
+<img class="sdgs_img" src="img/SDGs.jpeg" alt="SDGsの画像" style="filter: saturate(<%= 100*@check/ 20 %>%)">
 
 <h3 class="tassei">達成率：<%= (100*@check/20) %>%</h3>
 

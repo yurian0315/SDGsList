@@ -2,16 +2,10 @@
     margin: 0;
     padding: 0;
 }
-.lognew {
-     display: flex;
-    justify-content: flex-end;
 
+body {
+    margin-bottom: 32px;
 }
-.lognew a {
-    text-decoration: none;
-   
-}
-
 .fa-sign-in-alt {
     color: coral;
     font-size: 50px;
@@ -24,13 +18,42 @@
     padding-left: 8px;
 }
 
+.menu-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #9d9d9d;
+  padding: 0 8px;
+}
+.menu-right {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.menu-left a {
+     text-decoration: none;
+     color: #f9f9f9;
+     font-size: 25px;
+}
+
+
+
 h3 {
     text-align: center;
 }
 
 .start {
-    text-align: center;
+    width: 700px;
+    margin: 0 auto;
+   
 }
+
+.midasi{
+    font-size: 20px;
+    color: #ff872a;
+    border-bottom: dashed 2px #6594e0;
+}
+
 
 .sdgs_start {
     width: 700px;
@@ -45,7 +68,13 @@ h3 {
 /*}*/
 
 .loginpage {
-    text-align: center;
+    
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ max-width: 700px;
+ margin: 0 auto;
+ padding: 5px;
 }
 
 @media screen and (max-width: 768px) {
