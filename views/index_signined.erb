@@ -13,7 +13,7 @@
 
 <img class="sdgs_img" src="img/SDGs.jpeg" alt="SDGsの画像" style="filter: saturate(<%= 100*@check/ 20 %>%)">
 
-<h3 class="tassei">達成率：<%= (100*@check/20) %>%</h3>
+<h3 class="tassei"><p class="tasseiritu">達成率 <%= (100*@check/20) %>%</p></h3>
 
 
 <div class="body">
@@ -58,7 +58,7 @@
             $('.sdgs_img').css('filter', 'saturate(' + current_check + '%)');
             $(className).attr('onChange', "check(this.value, true, '" + className + "')");
         }
-        $('.tassei').html('達成率 : ' + current_check + '%');
+        $('.tasseiritu').html('達成率  ' + current_check + '%');
         $.post("/check/" + value);
         
         if (current_check == 100){

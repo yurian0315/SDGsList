@@ -39,6 +39,9 @@
     height: 50px;
     border-bottom: dashed 2px #6594e0;
     margin: 0 8px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .sdgs_img {
@@ -55,6 +58,7 @@
     
     
 }
+
 
 .menubar {
     font-family: -apple-system, "Roboto", "Helvetica Neue", "Droid Sans",
@@ -79,8 +83,17 @@
     "Osaka", "MS PGothic", arial, sans-serif;
     display: flex;
     justify-content: center;
+    
+   
 }
 
+.tasseiritu {
+    background-color: lightsalmon;
+    color: white;
+    padding: 0.5em;
+    border-radius: 1.0em; 
+    margin-bottom: 10px;
+}
 
 .fa-sign-out-alt {
     color: coral;
