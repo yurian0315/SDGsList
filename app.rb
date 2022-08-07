@@ -16,6 +16,8 @@ get '/' do
         @user_tasks = UserTask.where(user_id: session[:user])
         @check = @user_tasks.where(check: true).size
         # binding.pry
+        @achievement = 100*@check / 20
+        @tasks = Task.all
         erb :index_signined
     else
         erb :index

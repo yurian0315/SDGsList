@@ -30,6 +30,15 @@
     background-color: #eee;
 }
 
+/*input[type=checkbox]."sdg<%= user_task.id %>" {*/
+/*　　display: none;*/
+/*}*/
+
+
+.checkbox_hidden {
+    display: none;
+}
+
 .card img {
     width: 80%;
     
@@ -46,8 +55,8 @@
 
 .sdgs_img {
     filter: saturate(0%);
-    width: 700px;
-    height: 500px;
+    width: 1000px;
+    height: 700px;
     
     
     position: relative;
@@ -75,6 +84,8 @@
     color: white;
     text-align: center;
 }
+
+
 
 
 .tassei {

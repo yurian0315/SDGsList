@@ -20,3 +20,26 @@ Task.create([
     {name: "SDGs関連の投稿にいいねやリツイートなど拡散する", image: "/img/retweet.png"},
     {name: "SDGsについて調べてみる", image: "/img/siraberu.png"}
     ])
+
+Category.create([
+    {name: "goaltitle", image: "/img/goaltitle"},
+    {name: "goal1", image:  "/img/goal1.png"},
+    {name: "goal2", image:  "/img/goal2.png"},
+    {name: "goal3", image: "/img/goal3.png"},
+    {name: "goal4", image:  "/img/goal4.png"},
+    {name: "goal5", image: "/img/goal5.png"},
+    {name: "goal6", image: "/img/goal6.png"},
+    {name: "goal7", image: "/img/goal7.png"},
+    {name: "goal8", image: "/img/goal8.png"},
+    {name: "goal9", image: "/img/goal9.png"},
+    {name: "goal10", image: "/img/goal10.png"},
+    {name: "goal11", image: "/img/goal11.png"},
+    {name: "goal12", image: "/img/goal12.png"},
+    {name: "goal13", image: "/img/goal13.png"},
+    {name: "goal14", image: "/img/goal14.png"},
+    {name: "goal15", image: "/img/goal15.png"},
+    {name: "goal16", image: "/img/goal16.png"},
+    {name: "goal17", image: "/img/goal17.png"},
+    {name: "goal18", image: "/img/goal18.png"}
+    
+    ])
