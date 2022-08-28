@@ -150,6 +150,15 @@
     
 /*}*/
 
+
+input[type="checkbox"] {
+    display: none;
+}
+
+
+
+
+
 .modal{
     display: none;
     height: 100vh;

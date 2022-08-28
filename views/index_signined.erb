@@ -13,11 +13,13 @@
 
 <img class="sdgs_img" src="img/SDGs.jpeg" alt="SDGsの画像" style="filter: saturate(<%= 100*@check/ 20 %>%)">
 
-<h3 class="tassei"><p class="tasseiritu">達成率 <%= (100*@check/20) %>%</p></h3>
+<h3 class="tassei"><p class="tasseiritu">達成率 <%= (100*@check/20) %>%
+</p></h3>
 
 
 <div class="body">
 
+<% if false %>
 <% @user_tasks.each do |user_task|%>
 
         <div class="card">
@@ -31,11 +33,29 @@
         </div>
     <% end %>
 </div>
+<% end %>
+
+<div>
+    <form action="/check" method="post">
+    <% @user_tasks.each do |user_task|%>
+        <!--<div class="card">-->
+            <!--<div class="title">-->
+                <%= Task.find(user_task.task_id).name %>:
+                <img class="gohan_img" id="task_img<%= user_task.id %>" src="<%= Task.find(user_task.task_id).image %>" alt="食べ物を残さない写真">
+                <input type="checkbox" id="checkbox<%= user_task.id %>" class="checkbox_hidden" name="values[]" value="<%= user_task.id%>" onChange="check(this.value, true, '.sdg<%= user_task.id %>' )"/>
+            <!--</div>-->
+        <!--</div>-->
+    <% end %>
+    <input type="submit" value="送信"/>
+    </form>
+</div>
 
 
-<div class="content">
+
+<!--<div class="content">-->
         
-    </div>
+<!--    </div>-->
+
     <div class="modal js-modal">
         <div class="modal__bg js-modal-close"></div>
         <div class="modal__content">
@@ -59,7 +79,7 @@
             $(className).attr('onChange', "check(this.value, true, '" + className + "')");
         }
         $('.tasseiritu').html('達成率  ' + current_check + '%');
-        $.post("/check/" + value);
+        // $.post("/check/" + value);
         
         if (current_check == 100){
             $('.js-modal').fadeIn();
@@ -67,6 +87,15 @@
         
     }
     
+     // カードをクリックして、チェックボックスの値を切り替える処理。
+    <% @user_tasks.each do |user_task|%>
+        console.log(<%= user_task.id %>)
+        document.getElementById("task_img<%= user_task.id %>").onclick = function() {
+            var checkbox = document.getElementById("checkbox<%= user_task.id %>");
+            checkbox.checked = !checkbox.checked;
+            console.log(checkbox.checked);
+        };
+    <% end %>
     
     
     $(function(){

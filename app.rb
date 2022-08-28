@@ -13,8 +13,8 @@ enable :sessions
 
 get '/' do
     if session[:user]
-        @user_tasks = UserTask.where(user_id: session[:user])
-        @check = @user_tasks.where(check: true).size
+        @user_tasks = UserTask.where(user_id: session[:user]).where(check: false)
+        @check = UserTask.where(user_id: session[:user]).where(check: true).size
         # binding.pry
         erb :index_signined
     else
@@ -68,4 +68,21 @@ post '/check/:id'  do
     user_task.count = user_task.count + 1
     
     user_task.save
+end
+
+post '/check' do
+    puts '==============================================='
+    values = params[:values]
+    if  values!= nil
+        values.each do |value|
+            user_task = UserTask.find(value)
+            user_task.check = !(user_task.check)
+            user_task.count = user_task.count + 1
+            user_task.save   
+        end  
+    else 
+        puts "何もなかった"
+        
+    end  
+    redirect '/'
 end
