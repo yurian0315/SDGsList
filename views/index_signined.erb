@@ -6,29 +6,39 @@
 <% content_for :body do %>
 <div class="menubar">
     <div class="loginname"><h2>ようこそ<%= User.find(session[:user]).name %>さん</h2></div>
+    <div class="archive"><a href="/"><i class="archivebutton"></i></a></div>
     <div class="logout"><a href="/signout"><i class="fas fa-sign-out-alt"></i></a></div>
 </div>
 
+
+
+<!--<div class="sdgs_img">-->
+<!--  <img class="img" src="img/goal1.png" id= "img1"  style="filter: saturate(<#%= 100*@check/ 20 %>%)">-->
+<!--  <img class="img" src="img/goal2.png" id= "img2">-->
+<!--  <img class="img" src="img/goal3.png" id= "img3">-->
+<!--  <img class="img" src="img/goal4.png">-->
+<!--  <img class="img" src="img/goal5.png">-->
+<!--  <img class="img" src="img/goal6.png">-->
+<!--  <img class="img" src="img/goal7.png">-->
+<!--  <img class="img" src="img/goal8.png">-->
+<!--  <img class="img" src="img/goal9.png">-->
+<!--  <img class="img" src="img/goal10.png">-->
+<!--  <img class="img" src="img/goal11.png">-->
+<!--  <img class="img" src="img/goal12.png">-->
+<!--  <img class="img" src="img/goal13.png">-->
+<!--  <img class="img" src="img/goal14.png">-->
+<!--  <img class="img" src="img/goal15.png">-->
+<!--  <img class="img" src="img/goal16.png">-->
+<!--  <img class="img" src="img/goal17.png">-->
+<!--  <img class="img" src="img/goal18.png">-->
+<!--</div>-->
+
+
 <div class="sdgs_img">
-  <img src="img/goal1.png"  style="filter: saturate(<%= 100*@check/ 20 %>%)">
-  <img src="img/goal2.png">
-  <img src="img/goal3.png">
-  <img src="img/goal4.png">
-  <img src="img/goal5.png">
-  <img src="img/goal6.png">
-  <img src="img/goal7.png">
-  <img src="img/goal8.png">
-  <img src="img/goal9.png">
-  <img src="img/goal10.png">
-  <img src="img/goal11.png">
-  <img src="img/goal12.png">
-  <img src="img/goal13.png">
-  <img src="img/goal14.png">
-  <img src="img/goal15.png">
-  <img src="img/goal16.png">
-  <img src="img/goal17.png">
-  <img src="img/goal18.png">
+    <img src="SDGs.jpeg">
 </div>
+
+
 
 <h3 class="tassei"><p class="tasseiritu">達成率<%= @achievement %>%</p></h3>
 
@@ -75,14 +85,24 @@
     </div>
 </div>
 
-<div id="check_man">
+<div>
     <% @tasks.each do |task|%>
-        <h1>ここがカードになる</h1>
-        <input type="checkbox" id="checkbox_test_<%= task.id %>" class="checkbox_hidden"/>
+        <h1 id="check_man_<%= task.id %>">ここがカードになる</h1>
+        <input type="checkbox" id="checkbox_test_<%= task.id %>" class="checkbox_hidden" name="options[]"/>
     <% end %>
+    <input type="button" value="送信"/>
 </div>
 
 <script>
+//     document.getElementById("img1").onclick = function() {
+// 	location.href = '/option';
+// }   document.getElementById("img2").onclick = function() {
+// 	location.href = '/option';
+// 	document.getElementById("img3").onclick = function() {
+// 	location.href = '/option';
+
+
+
     var current_check = <%= (100*@check/20) %>;
     function check(value, status, className){
         if (status  == true){
@@ -102,17 +122,15 @@
         }
     }
     
-    window.onload = function(){
-        var element = document.getElementById("check_man");
-        element.onclick = switchCheck;
-    }
-    
-    function switchCheck(){
-        // console.log("hoge");
-        var checkbox = document.getElementById("checkbox_test_1");
-        checkbox.checked = !checkbox.checked;
-        console.log(checkbox.checked);
-    }
+    // カードをクリックして、チェックボックスの値を切り替える処理。
+    <% @tasks.each do |task|%>
+        console.log(<%= task.id %>)
+        document.getElementById("check_man_<%= task.id %>").onclick = function() {
+            var checkbox = document.getElementById("checkbox_test_<%= task.id %>");
+            checkbox.checked = !checkbox.checked;
+            console.log(checkbox.checked);
+        };
+    <% end %>
     
     $(function(){
     $('.js-modal-close').on('click',function(){

@@ -1,0 +1,30 @@
+<% content_for :head do %>
+    <link rel="stylesheet" href="css/checkbox.css">
+<% end %>
+
+<% content_for :body do %>
+<div id="image-container">
+    <img id="image0" src="https://3.bp.blogspot.com/-tYr6u3ie0s4/UNw-x5hdEYI/AAAAAAAAJ0Y/dqcpRVu4vr4/s120/number_0.png">
+    <img id="image1" src="https://4.bp.blogspot.com/-7T-JzvxK5y0/UNO15R_x8oI/AAAAAAAAIvY/q6WNM45XVhE/s120/number_1.png">
+    <img id="image2" src="https://1.bp.blogspot.com/-zYsWvZ2Dzek/UNO16JRlO-I/AAAAAAAAIvg/uZ8rFCv3Fko/s120/number_2.png">
+</div>
+<form action="/checkbox" method="post">
+    <div>
+        <label for="checkbox0"/>
+        <!--name の値に [] を付けることで、配列として扱える。-->
+        <!--すなわち、複数の値を送信することができる。-->
+        <input type="checkbox" id="checkbox0" name="values[]" value="0" hidden>
+    </div>
+    <div>
+        <label for="checkbox1"/>
+        <input type="checkbox" id="checkbox1" name="values[]" value="1" hidden>
+    </div>
+    <div>
+        <label for="checkbox2"/>
+        <input type="checkbox" id="checkbox2" name="values[]" value="2" hidden>
+    </div>
+    <button type="submit">送信する</button>
+</form>
+
+<script type="text/javascript" src="javascript/checkbox.js"></script>
+<% end %>

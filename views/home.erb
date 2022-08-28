@@ -1,0 +1,76 @@
+<% content_for :head do %>
+<link rel="stylesheet" href="css/index.css">
+<link rel="shortcut icon" href="/favicon.ico">
+
+<meta name="description" content="今すぐSDGsに協力できるワンアクションをチェックリストとして確認できるアプリです。">
+<meta property="og:image" content="https://sdgslist.herokuapp.com/img/start.jpeg">
+
+
+<% end %>
+
+<% content_for :body do %>
+
+
+<div class="menu-wrap">
+  <div class="menu-left">
+    <a href="/" alt="">SDGsList</a>
+  </div>
+  <div class="menu-right">
+    <a href="/signin"><i class="fas fa-sign-in-alt"></i></a>
+    <a href="/signup"><i class="fas fa-user-plus"></i></a>
+    
+  </div>
+</div>
+
+
+
+<div class="loginpage">
+<p class="sentaku"><span class="marker_line">興味のあるゴールを3つ選択してください</span></p>
+
+<div class="sdgs_start">
+  <img src="img/goal1.png">
+  <img src="img/goal2.png">
+  <img src="img/goal3.png">
+  <img src="img/goal4.png">
+  <img src="img/goal5.png">
+  <img src="img/goal6.png">
+  <img src="img/goal7.png">
+  <img src="img/goal8.png">
+  <img src="img/goal9.png">
+  <img src="img/goal10.png">
+  <img src="img/goal11.png">
+  <img src="img/goal12.png">
+  <img src="img/goal13.png">
+  <img src="img/goal14.png">
+  <img src="img/goal15.png">
+  <img src="img/goal16.png">
+  <img src="img/goal17.png">
+  <img src="img/goal18.png">
+  
+<p class="start"><h1 class="midasi">SDGsとは</h1><br>Sustainable Development Goalsの頭文字の略で、日本語では持続可能な開発目標と言われています。
+2015年9月に国連が提唱し、持続可能な社会の実現を目指す2030年までの目標です。SDGsは17の大きな目標と169の具体的なターゲットで構成されています。
+<br><br><h1 class="midasi">このアプリについて</h1><br>このアプリは個人で今すぐSDGsに協力できるワンアクションをチェックリストとして確認できるアプリです。
+<br>目標が達成されていくにつれて絵の色が変わります。</p>
+</div>
+
+<div class="kettei1">
+  <a href="/signin">始める</a>
+</div>
+
+
+<script>
+  $(function() {
+  // 分割する幅と高さを指定する
+  // 画像を割り切れれば幅と高さは何でもよい
+  var width = 32, height = 32;
+  //画像の取得からロード後処理まで
+  var img = new Image();
+  img.onload = function() {
+    segmentationImage(img, width, height);
+  }
+  img.src = "img/SDGs.jpeg";
+});
+</script>
+
+
+<% end %>

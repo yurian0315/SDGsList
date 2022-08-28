@@ -5,6 +5,7 @@
 
 body {
     margin-bottom: 32px;
+   
 }
 .fa-sign-in-alt {
     color: coral;
@@ -12,11 +13,11 @@ body {
    
 }
 
-.fa-user-plus {
-    color: skyblue;
-    font-size: 40px;
-    padding-left: 8px;
-}
+/*.fa-user-plus {*/
+/*    color: skyblue;*/
+/*    font-size: 40px;*/
+/*    padding-left: 8px;*/
+/*}*/
 
 .menu-wrap {
   display: flex;
@@ -42,6 +43,8 @@ h3 {
     text-align: center;
 }
 
+
+
 .sentaku{
     margin-top: 15px;
     font-size: 35px;
@@ -55,26 +58,21 @@ h3 {
 .start {
     width: 700px;
     margin: 0 auto;
-   
-}
-
-
-.sdgs_start {
-    display: flex;
-   flex-wrap: wrap;
+    padding: 15px 0px;
    
 }
 
 
 
-.kettei1 {
+
+.start {
     text-align: center;
     text-color: black;
     font-size: 40px;
    
     
 }
-.kettei1 a {
+.start a {
    
     
     border-radius: 10%;
@@ -107,10 +105,17 @@ h3 {
 /*}*/
 
 
-.midasi{
+.midasi1 {
     font-size: 20px;
     color: #ff872a;
     border-bottom: dashed 2px #6594e0;
+}
+
+.midasi2 {
+    font-size: 20px;
+    color: #ff872a;
+    border-bottom: dashed 2px #6594e0;
+    padding: 15px 0px;
 }
 
 
@@ -137,6 +142,10 @@ h3 {
 }
 
 @media screen and (max-width: 768px) {
+  .start {
+      width: 100%;
+      heught: auto;
+  }
   .sdgs_start {
     width: 100%;
     height: auto;

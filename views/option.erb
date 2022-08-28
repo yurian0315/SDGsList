@@ -1,0 +1,17 @@
+<% content_for :head do %>
+<link rel="stylesheet" href="css/option.css">
+<link rel="shortcut icon" href="/favicon.ico">
+
+<% end %>
+
+<% content_for :body do %>
+<h class="archivetitle">タイトル</h>
+<form action="/option" method="post">
+    <div class="form-item">
+      <label for="name"></label>
+      <input type="text" name="name" required="required" placeholder="Name"></input>
+    </div>
+</form>    
+ 
+ 
+<% end %>

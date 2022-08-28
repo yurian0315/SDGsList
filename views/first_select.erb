@@ -1,0 +1,19 @@
+ <!--余裕ある時に実装する-->
+ <% content_for :head do %>
+<link rel="stylesheet" href="css/style.css">
+<link rel="shortcut icon" href="/favicon.ico">
+<% end %>
+
+
+ <% content_for :body do %>
+ <div class="body">
+     
+ <% @category.each do |category| %>
+ <input type="checkbox" id="<%= category.id %>"  value="<%= category.id %>" name="<%= category.id %>"/>
+
+
+  <% end %>
+ </div>
+ 
+ 
+ <% end %>

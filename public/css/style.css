@@ -55,8 +55,11 @@
 
 .sdgs_img {
     filter: saturate(0%);
-    width: 1000px;
-    height: 700px;
+    width: 95%;
+    height: 100%;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
     
     
     position: relative;
@@ -66,6 +69,10 @@
      margin: auto;
     
     
+}
+
+.sdgs_img .img {
+    width: 15%;
 }
 
 
@@ -109,6 +116,10 @@
 .fa-sign-out-alt {
     color: coral;
     font-size: 50px;
+}
+
+.archivebutton {
+    
 }
 
 
@@ -187,6 +198,7 @@
     text-decoration: none;
     
 }
+
 
 
 @media screen and (max-width: 768px) {

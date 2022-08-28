@@ -55,7 +55,7 @@ post '/signup' do
             task_id: task.id
         )
     end
-    redirect '/'
+    erb :index
 end
 
 get '/signout' do
@@ -71,3 +71,52 @@ post '/check/:id'  do
     
     user_task.save
 end
+
+get '/checkbox' do
+    erb :checkbox
+end
+
+post '/checkbox' do
+    # チェックを付けた項目を、 params で配列として受け取れる。
+    values = params[:values]
+    if values != nil
+        values.each do |value|
+            puts "===================="
+            puts value
+            puts "===================="
+        end
+    else
+        puts "何もなかった"
+    end
+    redirect '/'
+end
+
+get '/first_select' do
+    erb :first_select
+end
+
+post '/first_select' do
+    values = params[:values]
+    if values != nil
+        values.each do |value|
+            puts "===================="
+            puts value
+            puts "===================="
+        end
+    else
+        puts "何もなかった"
+    end
+    redirect '/'
+end
+
+
+get '/option' do
+    erb :option
+end
+
+post '/opiton' do
+    
+    redirect '/'
+end
+
+
