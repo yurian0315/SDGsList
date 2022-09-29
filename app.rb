@@ -13,8 +13,9 @@ enable :sessions
 
 get '/' do
     if session[:user]
-        @user_tasks = UserTask.where(user_id: session[:user]).where(check: false)
+        @user_tasks = UserTask.where(user_id: session[:user]).where(check: false).where(task_id: ..20)
         @check = UserTask.where(user_id: session[:user]).where(check: true).size
+        @is_complete = UserTask.where(user_id: session[:user]).where(check: false).where(task_id: ..20).size == 0
         # binding.pry
         erb :index_signined
     else

@@ -37,33 +37,32 @@
 
 <div>
     <form action="/check" method="post">
-    <% @user_tasks.each do |user_task|%>
-        <!--<div class="card">-->
-            <!--<div class="title">-->
-                <%= Task.find(user_task.task_id).name %>:
+    <div class="card-container">
+        <% @user_tasks.each do |user_task|%>
+        <div class="card" id="card<%= user_task.id %>">
+                <h4 class="card_title"><%= Task.find(user_task.task_id).name %></h4>
                 <img class="gohan_img" id="task_img<%= user_task.id %>" src="<%= Task.find(user_task.task_id).image %>" alt="食べ物を残さない写真">
                 <input type="checkbox" id="checkbox<%= user_task.id %>" class="checkbox_hidden" name="values[]" value="<%= user_task.id%>" onChange="check(this.value, true, '.sdg<%= user_task.id %>' )"/>
-            <!--</div>-->
-        <!--</div>-->
+        </div>
     <% end %>
-    <input type="submit" value="送信"/>
+    </div>
+    <!--<div class="submitbutton">-->
+    <input type="submit" value="送信" class="submitbutton"/>
+    <!--</div>-->
     </form>
 </div>
-
-
-
-<!--<div class="content">-->
-        
-<!--    </div>-->
-
+    <!--<div class="content">-->
+    <!--    <a class="js-modal-open" href="">クリックでモーダルを表示</a>-->
+    <!--</div>-->
     <div class="modal js-modal">
-        <div class="modal__bg js-modal-close"></div>
+        <div class="modal__bg js-modal-close">
+        </div>
         <div class="modal__content">
             <p>すべての項目を達成しました。おめでとうございます！これからもSDGsを意識してより良い地球にしましょう。
             アプリをご利用いただきありがとうございました。</p>
             <a class="js-modal-close" href="">閉じる</a>
-        </div><!--modal__inner-->
-    </div><!--modal-->
+        </div>
+    </div>
 
 
 <script>
@@ -94,16 +93,36 @@
             var checkbox = document.getElementById("checkbox<%= user_task.id %>");
             checkbox.checked = !checkbox.checked;
             console.log(checkbox.checked);
+            
+            let card = document.getElementById("card<%= user_task.id %>");
+            let taskImg = document.getElementById("task_img<%= user_task.id %>");
+            if (checkbox.checked) {
+                card.style.backgroundColor = "#ddd";
+                taskImg.style.opacity = "0.7";
+            } else {
+                card.style.backgroundColor = "#eee";
+                taskImg.style.opacity = "1.0";
+            }
         };
     <% end %>
-    
-    
+
+
     $(function(){
-    $('.js-modal-close').on('click',function(){
-        $('.js-modal').fadeOut();
-        return false;
+        <% if @is_complete %>
+            console.log(<%= @is_complete %>)
+            $('.js-modal').fadeIn();
+        <% end %>
+        $('.js-modal-close').on('click',function(){
+            $('.js-modal').fadeOut();
+            return false;
+        });
     });
-});
+    $(function(){
+        $('.js-modal-close').on('click',function(){
+            $('.js-modal').fadeOut();
+            return false;
+        });
+    });
 
 </script>
 
